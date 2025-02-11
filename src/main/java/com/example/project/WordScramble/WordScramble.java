@@ -13,9 +13,19 @@ public class WordScramble {
    *  - letters were swapped at most once
    */
   public static String scrambleWord(String word) {
-      /* to be implemented in part (a) */
-      return "";
+    ArrayList<String> letters = new ArrayList<String>();
+    String out = "";
+    for(int i = 0; i < word.length(); i ++) {
+      letters.add(word.substring(i, i + 1));
+    }
+    while(letters.size() > 0) {
+      int random = (int) (Math.random() * (letters.size() + 1));
+      out += letters.get(random);
+      letters.remove(random);
+    }
+    return out;
   }
+  
 
   /** Modifies wordList by replacing each word with its scrambled
    *  version, removing any words that are unchanged as a result of scrambling.
@@ -30,7 +40,14 @@ public class WordScramble {
    *    before the method was called
    */
   public static ArrayList<String> scrambleOrRemove(ArrayList<String> wordList) {
-      /* to be implemented in part (b) */
-      return new ArrayList<String>();
+    ArrayList<String> out = new ArrayList<String>();
+    for(int i = 0; i < wordList.size(); i ++ ) {
+      String temp = scrambleWord(wordList.get(i));
+      if(!temp.equals(wordList.get(i))) {
+        out.add(temp);
+      }
+    }
+    return out;
   }
+  
 }

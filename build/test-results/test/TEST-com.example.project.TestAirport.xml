@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.project.TestAirport" tests="3" skipped="0" failures="1" errors="0" timestamp="2025-02-11T03:59:44" hostname="codespaces-7f18f4" time="0.072">
+<testsuite name="com.example.project.TestAirport" tests="3" skipped="0" failures="1" errors="0" timestamp="2025-02-11T04:49:41" hostname="codespaces-7f18f4" time="0.052">
   <properties/>
-  <testcase name="testUpdateAllFlights()" classname="com.example.project.TestAirport" time="0.035"/>
-  <testcase name="testRevenuePARTA()" classname="com.example.project.TestAirport" time="0.017">
+  <testcase name="testUpdateAllFlights()" classname="com.example.project.TestAirport" time="0.03"/>
+  <testcase name="testRevenuePARTA()" classname="com.example.project.TestAirport" time="0.015">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;14255.0&gt; but was: &lt;12255.0&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;14255.0&gt; but was: &lt;12255.0&gt;
 	at app//org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at app//org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
