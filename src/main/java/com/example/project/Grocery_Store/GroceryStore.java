@@ -14,9 +14,15 @@ public class GroceryStore {
      *  productsStocked array that need to be reordered, as described in part (a)
      *  Precondition: min > 0 */
     public ArrayList<Integer> getReorderList(int min) {
-        /* to be implemented in part (a) */
-        return new ArrayList<Integer>();
-    }
+        ArrayList<Integer> needStock = new ArrayList<Integer>();
+        for(int i = 0; i < productsStocked.length; i ++ ) {
+          if(productsStocked[i].getQuantity() <= min) {
+            needStock.add(i);
+          }
+        }
+        return needStock;
+      }
+      
 
     /** Returns true if all products named in shoppingList are available for purchase
      *  and returns false otherwise, as described in part (b)
@@ -24,7 +30,20 @@ public class GroceryStore {
      *  in the productsStocked array.
      */
     public boolean checkAvailability(ArrayList<String> shoppingList) {
-        /* to be implemented in part (b) */
+        int available = 0;
+        for(int i = 0; i < shoppingList.size(); i ++){
+          for(int j = 0; j < productsStocked.length; j ++) {
+            if(shoppingList.get(i).equals(productsStocked[j].getName())) {
+              if(productsStocked[j].getQuantity() >= 1) {
+                available ++;
+              }
+            }
+          }
+        }
+        if (available == shoppingList.size()) {
+            return true;
+        }
         return false;
-    }
+      }
+      
 }
