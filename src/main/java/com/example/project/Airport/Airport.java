@@ -19,12 +19,18 @@ public class Airport  {
      *  as described in part (a)
      */
     public double getTotalRevenue(){
-        double total = 0;
-        for(Flight flight : allFlights) {
+      double total = 0;
+      for(Flight flight : allFlights) {
+        if(flight.getNumPassengers() < flight.getCapacity()) {
           total += flight.getPrice() * flight.getNumPassengers();
         }
-        return total;
+        else {
+          total += flight.getPrice() * flight.getCapacity();
+        }
       }
+      return total;
+    }
+    
       
 
     /** Updates the list of flights by removing certain flights and

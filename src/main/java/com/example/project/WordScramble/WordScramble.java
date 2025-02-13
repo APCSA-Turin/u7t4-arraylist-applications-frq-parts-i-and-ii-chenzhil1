@@ -15,16 +15,23 @@ public class WordScramble {
   public static String scrambleWord(String word) {
     ArrayList<String> letters = new ArrayList<String>();
     String out = "";
-    for(int i = 0; i < word.length(); i ++) {
-      letters.add(word.substring(i, i + 1));
+    for(int i = 0 ; i < word.length(); i ++) {
+      letters.add(word.substring(i, i +1));
     }
-    while(letters.size() > 0) {
-      int random = (int) (Math.random() * (letters.size() + 1));
-      out += letters.get(random);
-      letters.remove(random);
+    for(int i = 0; i < word.length() - 1; i ++) {
+      if(!letters.get(i + 1).equals("A") && letters.get(i).equals("A")) {
+        letters.add(i, letters.remove(i + 1));
+        i += 1;
+      }
+    }
+    for(String letter : letters) {
+      out += letter;
     }
     return out;
   }
+  
+  
+  
   
 
   /** Modifies wordList by replacing each word with its scrambled
